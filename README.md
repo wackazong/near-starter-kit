@@ -24,16 +24,16 @@ In this case, all exported functions become public contract methods.
 
 ```ts
 // return the string 'hello world'
-export function helloWorld(): string {}
+export function helloWorld(): string { ... }
 
 // read the given key from account (contract) storage
-export function read(key: string): string {}
+export function read(key: string): string { ... }
 
 // write the given value at the given key to account (contract) storage
-export function write(key: string, value: string): string {}
+export function write(key: string, value: string): string { ... }
 
 // private helper method used by read() and write() above
-private storageReport(): string {}
+private storageReport(): string { ... }
 ```
 
 ### Singleton
@@ -47,17 +47,17 @@ In this case, all methods on the class become public contract methods unless mar
 export class Contract {
 
   // return the string 'hello world'
-  helloWorld(): string {}
+  helloWorld(): string { ... }
 
   // read the given key from account (contract) storage
-  read(key: string): string {}
+  read(key: string): string { ... }
 
   // write the given value at the given key to account (contract) storage
   @mutateState()
-  write(key: string, value: string): string {}
+  write(key: string, value: string): string { ... }
 
   // private helper method used by read() and write() above
-  private storageReport(): string {}
+  private storageReport(): string { ... }
 }
 ```
 
